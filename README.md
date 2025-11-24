@@ -1,15 +1,17 @@
 # swift-study
 
 ## Variables
-- two variables "let" and "var"
-- "let" is a constant value - cannot reassigned or change the value (data types/structure)
+- Two keywords for defining a variable, ``var`` and ``let``
+- ``let`` is a constant value - cannot reassigned or change the value (data types/structure)
     - Exception however, if the value assigned to the ``let`` variable initially is a class, then internal value can be changed. e.g.; class
-- "var" can be reassigned to new value
+- ``var`` can be reassigned to new value with the same Type as previously defined
 
 ## Types
 ### Int
-- 65-bit on modern devices
+- 62-bit on modern devices
 - signed by default
+- uses Int64 by default
+Best practice: Use ``Int`` unless you need a specific size or unsigned
 ```swift
 Int // using by default is Int64 on modern devices
 Int8 // -128 to 127
@@ -51,7 +53,54 @@ let multiline = """
 This is a
 multiline string
 """
-let unicode = "afé ☕️ cost
+let unicode = "café ☕️ cost $5"
+```
+
+Useful properties/methods:
+```swift
+name.count
+name.isEmpty
+name.uppercased()     // mutates the name variable
+name.contains("Swift")     // Checks a substring of "Swift"
+name.hasPrefix("Tay")
+```
+String interpolation:
+- Process of embedding expressions or variables directly in string literals using the ``\( )`` syntax.
+```swift
+let score = 95
+let message = "Your score is \(score * 2) points!"
+```
+### Character
+A single grapheme cluster:
+```swift
+let letter: Character = "A"     // a single character literal is String
+let flag = "🇺🇸"    // one Character (flag is a single grapheme cluster)
+```
+Must explicitly specify ``Character`` type to a variable, a single character literal will inferred as ``String``
+
+### Type inference
+Swift infers types when possible
+```swift
+let x = 42     // Int
+let y = 3.14    // Double
+let z = "Hello"    // String
+let flag = true    // Bool
+```
+
+### Type Aliases
+typealias AudioSample = UInt16
+typealias UserID = String
+var sample: AudioSample = 2048
+
+### Tuples
+lightweight grouping of values (unnamed struct-like):
+```swift
+let http404 = (404, "Not found")    // (Int, String)
+let coordinates = (x: 10.5, y: 20.3)    // labeled
+let (statusCode, message) = http404    // decomposition
+
+print(coordinates.x)     // 10.5
+print(http404.0)    // 404 (by position)
 ```
 
 ### Immutabilities on ``array`` or ``collection`` in swift
