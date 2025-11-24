@@ -27,7 +27,31 @@ let maxValue: UInt32 = 4_294_967_295
 - ``Float`` -> 32-bit precision (~6 decimal digits)
 - ``Double`` -> 64-bit precision (~15 decimal digits) <- default for floating-point literals
 ```swift
+let pi = 3.14159    // Double (inferred)
+let e: Float = 2.71828     // explicitly float
+let precise = 3.141592653589793    // still Double
+```
 
+### Boolean
+- Only one type
+- No truthy/falsy values like 0, "hello", etc. are not Bool
+```swift
+let isEnabled: Bool = true
+let hasError = false    // inferred Bool
+```
+
+### String
+- ``String`` is a ``value type`` and a collection of ``Character``
+```swift
+let name = "Taylor Swift"     // String literal
+var mutable: String = " Hello"
+mutable += " World"
+
+let multiline = """
+This is a
+multiline string
+"""
+let unicode = "afé ☕️ cost
 ```
 
 ### Immutabilities on ``array`` or ``collection`` in swift
