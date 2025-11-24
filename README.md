@@ -6,6 +6,29 @@
     - Exception however, if the value assigned to the ``let`` variable initially is a class, then internal value can be changed. e.g.; class
 - "var" can be reassigned to new value
 
+## Types
+### Int
+- 65-bit on modern devices
+- signed by default
+```swift
+Int // using by default is Int64 on modern devices
+Int8 // -128 to 127
+Int16
+Int32
+Int64
+UInt8 // 0 to 255
+UInt64 // 18 sextillion (max possible integer)
+
+let age: Int = 30
+let maxValue: UInt32 = 4_294_967_295
+```
+
+### Floating-point numbers
+- ``Float`` -> 32-bit precision (~6 decimal digits)
+- ``Double`` -> 64-bit precision (~15 decimal digits) <- default for floating-point literals
+```swift
+
+```
 
 ### Immutabilities on ``array`` or ``collection`` in swift
 - declaring an array with keyword ``var`` will allow reassignment and modification of the contents of array
