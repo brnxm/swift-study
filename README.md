@@ -134,3 +134,25 @@ print(http404.0)    // 404 (by position)
 a > b && c < d
 ```
 - there is two statement, ``a > b`` and ``c < d``, binded by ``&&`` in the middle, making the two expressions as a single logical expression
+
+## Code reading comprehension
+### Calling closures
+#### Calling in the arguments 
+```swift
+myFunc(closure: { $0 + $1 } )
+```
+#### Trailing closure
+```swift
+myFunc() { $0 + $1 }
+
+// if function only contains the closure, can omit the argument parenthesis
+myFunc { $0 + $1 }
+```
+
+### ``rethrows`` keyword
+- ``rethrows`` keyword can be seen only in function/method declaration
+- it indicates that there is a closure in the parameters that **may or may not** throw
+```swift
+// declaration with rethrows
+func performMath(closure: (Int, Int) throws -> Int ) rethrows -> Int { ... }
+```
