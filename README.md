@@ -156,3 +156,16 @@ myFunc { $0 + $1 }
 // declaration with rethrows
 func performMath(closure: (Int, Int) throws -> Int ) rethrows -> Int { ... }
 ```
+
+## SwiftUI framework
+- // Recursive type constraints
+- // leaf node - terminating recursion by using Never?
+
+# Notes/Good to know
+## Differences between attribute and macros
+### Attributes
+- Provide metadata about declarations (classes, structs, enums, properties, functions, etc)
+- Influences the compiler how the system treats the declaration
+### Macros
+- Compile-time code generation mechanism.
+- Code generation - actively generate new declarations, add protocol conformances, introduce members or modify properties
