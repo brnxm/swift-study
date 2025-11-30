@@ -165,7 +165,13 @@ func performMath(closure: (Int, Int) throws -> Int ) rethrows -> Int { ... }
 ## Differences between attribute and macros
 ### Attributes
 - Provide metadata about declarations (classes, structs, enums, properties, functions, etc)
-- Influences the compiler how the system treats the declaration
+- Modifies how the compiler should treat the entity they're attached to - without channging the source code itself
+Common attributes
+
+| Attributes | Description |
+| --- | --- |
+| @available(_:, *, deprecated:) | Marks availability or deprecates something |
+
 ### Macros
 - Compile-time code generation mechanism.
 - Code generation - actively generate new declarations, add protocol conformances, introduce members or modify properties
